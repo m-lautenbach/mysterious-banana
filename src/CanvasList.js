@@ -31,7 +31,7 @@ export default () => {
           </div>
           <Link to={`/${id}`}>
             <div style={{ marginRight: '1rem' }}>
-              <Canvas canvas={content.map(row => integerToArray(row))} size={20} />
+              <Canvas canvas={content.map(row => integerToArray(row))} size={50} />
             </div>
           </Link>
         </List.Item>,
