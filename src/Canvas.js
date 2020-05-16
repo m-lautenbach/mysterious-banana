@@ -11,7 +11,10 @@ export default ({ canvas, size }) => {
           <div
             key={rowIndex}
             style={{
-              lineHeight: 0,
+              display: 'grid',
+              gridTemplateColumns: 'repeat(16, 1fr)',
+              gridGap: 0,
+              width: size
             }}
           >
             {row.map((cell, cellIndex) =>
@@ -22,8 +25,6 @@ export default ({ canvas, size }) => {
                   setCanvasState(updatedCanvas)
                 }}
                 style={{
-                  display: 'inline-block',
-                  width: size / 16,
                   height: size / 16,
                   backgroundColor: cell ? '#000' : '#fff',
                 }}
