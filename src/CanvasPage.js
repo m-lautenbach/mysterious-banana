@@ -18,8 +18,6 @@ export default () => {
     fetchData()
   }, [id])
 
-  console.log(canvas)
-
   return <div>
     <Link to="/">Back to list</Link>
     <div style={{ height: '.5rem' }} />
