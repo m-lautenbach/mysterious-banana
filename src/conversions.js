@@ -22,7 +22,7 @@ export const integerToArray = (canvasRowAsInteger, length = 16) => {
 // Take array of bits and return unsigned integer
 export const arrayToInteger = (canvasRowAsArray, length = 16) => {
   if (canvasRowAsArray.length !== length) {
-    throw new RangeError(`array ${JSON.stringify(canvasRowAsArray, null, 2)} doesn\'t have expected length ${length}`)
+    throw new RangeError(`array ${JSON.stringify(canvasRowAsArray, null, 2)} doesn't have expected length ${length}`)
   }
   if (!_.all(bit => [0, 1].includes(bit), canvasRowAsArray)) {
     throw new TypeError(`array ${JSON.stringify(canvasRowAsArray, null, 2)} contains invalid bit`)
