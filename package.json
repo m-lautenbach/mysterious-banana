@@ -1,0 +1,9 @@
+{
+  "name": "mysterious-banana",
+  "version": "1.0.0",
+  "description": "Collaborative Canvas",
+  "main": "index.js",
+  "author": "Markus Lautenbach",
+  "license": "UNLICENSED",
+  "private": true
+}
