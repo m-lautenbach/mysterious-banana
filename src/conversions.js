@@ -1,7 +1,7 @@
-const _ = require('ramda')
+import * as _ from 'ramda'
 
 // Take 16 bit unsigned integer and return array of bit values, most significant at the left
-const integerToArray = (canvasRowAsInteger, length = 16) => {
+export const integerToArray = (canvasRowAsInteger, length = 16) => {
   // throwing exception for invalid numbers for now, as it's unclear how they should be handled (fail early)
   // proper handling would probably be too much work for the scope of this exercise
   if (canvasRowAsInteger % 1 !== 0) {
@@ -20,7 +20,7 @@ const integerToArray = (canvasRowAsInteger, length = 16) => {
 }
 
 // Take array of bits and return unsigned integer
-const arrayToInteger = (canvasRowAsArray, length = 16) => {
+export const arrayToInteger = (canvasRowAsArray, length = 16) => {
   if (canvasRowAsArray.length !== length) {
     throw new RangeError(`array ${JSON.stringify(canvasRowAsArray, null, 2)} doesn\'t have expected length ${length}`)
   }
@@ -34,9 +34,4 @@ const arrayToInteger = (canvasRowAsArray, length = 16) => {
     },
     0,
   )
-}
-
-module.exports = {
-  integerToArray,
-  arrayToInteger,
 }

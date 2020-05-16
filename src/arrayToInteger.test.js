@@ -1,4 +1,4 @@
-const { arrayToInteger } = require('../conversions')
+import { arrayToInteger } from './conversions'
 
 describe('conversion of a bit array to an unsigned integer representing 16 bits', () => {
   test('for an array full of 0s it should return 0', () => {
