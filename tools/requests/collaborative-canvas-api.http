@@ -1,0 +1,11 @@
+GET https://collaborativecanvas.herokuapp.com/v1/canvases/1
+###
+GET https://collaborativecanvas.herokuapp.com/v1/canvases/2
+###
+GET https://collaborativecanvas.herokuapp.com/v1/canvases/3
+
+###
+
+GET https://collaborativecanvas.herokuapp.com/v1/canvases?page=1&per=24
+
+
