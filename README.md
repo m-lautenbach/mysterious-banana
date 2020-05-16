@@ -1,8 +1,13 @@
 # Collaborative Canvas
 
-## Development
+## Get started
 
-Start the dev server with `yarn start`, a tab will open automatically and there will be hot reloading.
+Install all dependencies with `yarn` (install `yarn` if you don't have).
+Alternatively, use `npm install`.
+
+Start the dev server with `yarn start` / `npm run start`, a tab will open automatically and there will be hot reloading.
+
+## Development
 
 To run all tests, run `yarn test`.
 
