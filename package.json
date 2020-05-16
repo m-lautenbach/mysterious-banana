@@ -5,5 +5,11 @@
   "main": "index.js",
   "author": "Markus Lautenbach",
   "license": "UNLICENSED",
-  "private": true
+  "private": true,
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
 }
