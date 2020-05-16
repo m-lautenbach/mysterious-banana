@@ -1,39 +1,17 @@
 import React, { useState } from 'react'
 import * as _ from 'ramda'
-import { integerToArray } from './conversions'
 
-const _canvas = [
-  385,
-  960,
-  3122,
-  14366,
-  24578,
-  16386,
-  16386,
-  16386,
-  16386,
-  16386,
-  16386,
-  16390,
-  30748,
-  19504,
-  960,
-  33152,
-]
-
-const canvas = _canvas.map(row => integerToArray(row))
-
-export default () => {
+export default ({ canvas, size }) => {
   const [canvasState, setCanvasState] = useState(canvas)
 
   return (
-    <div className="App">
+    <div>
       {
         canvasState.map((row, rowIndex) =>
           <div
             key={rowIndex}
             style={{
-              lineHeight: '9.5px',
+              lineHeight: 0,
             }}
           >
             {row.map((cell, cellIndex) =>
@@ -45,8 +23,8 @@ export default () => {
                 }}
                 style={{
                   display: 'inline-block',
-                  width: 10,
-                  height: 10,
+                  width: size / 16,
+                  height: size / 16,
                   backgroundColor: cell ? '#000' : '#fff',
                 }}
               />,
