@@ -22,7 +22,7 @@ export default () => {
     <Link to="/">Back to list</Link>
     <div style={{ height: '.5rem' }} />
     {canvas ?
-      <Canvas canvas={canvas.content.map(row => integerToArray(row))} size={300} />
+      <Canvas id={id} canvas={canvas.content.map(row => integerToArray(row))} size={300} />
       : <div>Loading...</div>
     }
   </div>

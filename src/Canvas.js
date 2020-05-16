@@ -1,8 +1,24 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import * as _ from 'ramda'
+import { arrayToInteger } from './conversions'
 
-export default ({ canvas, size }) => {
+export default ({ id, canvas, size }) => {
   const [canvasState, setCanvasState] = useState(canvas)
+
+  const handleClick = useCallback(async (rowIndex, cellIndex, cellValue) => {
+    const updatedCanvas = _.assocPath([rowIndex, cellIndex], cellValue ? 0 : 1, canvasState)
+    setCanvasState(updatedCanvas)
+
+    await fetch(`https://collaborativecanvas.herokuapp.com/v1/canvases/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        content: updatedCanvas.map(row => arrayToInteger(row))
+      })
+    });
+  }, [canvasState])
 
   return (
     <div
@@ -24,16 +40,13 @@ export default ({ canvas, size }) => {
             <div
               key={rowIndex}
             >
-              {row.map((cell, cellIndex) =>
+              {row.map((cellValue, cellIndex) =>
                 <div
                   key={cellIndex}
-                  onClick={() => {
-                    const updatedCanvas = _.assocPath([rowIndex, cellIndex], cell ? 0 : 1, canvasState)
-                    setCanvasState(updatedCanvas)
-                  }}
+                  onClick={() => handleClick(rowIndex, cellIndex, cellValue)}
                   style={{
                     height: size / 16,
-                    backgroundColor: cell ? '#000' : '#fff',
+                    backgroundColor: cellValue ? '#000' : '#fff',
                   }}
                 />,
               )}
