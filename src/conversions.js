@@ -1,5 +1,5 @@
 // Take 16 bit unsigned integer and return array of bit values, most significant at the left
-export const integerToArray = (canvasRowAsInteger, length = 16) => {
+const integerToArray = (canvasRowAsInteger, length = 16) => {
   // throwing exception for invalid numbers for now, as it's unclear how they should be handled (fail early)
   // proper handling would probably be too much work for the scope of this exercise
   if (canvasRowAsInteger % 1 !== 0) {
