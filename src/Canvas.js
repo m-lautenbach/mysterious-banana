@@ -18,7 +18,7 @@ export default ({ id, canvas, size }) => {
         content: updatedCanvas.map(row => arrayToInteger(row))
       })
     });
-  }, [canvasState])
+  }, [canvasState, id])
 
   return (
     <div
